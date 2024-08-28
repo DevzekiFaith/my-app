@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import NavBar from "@/component/nav/NavBar";
 
 type FontClasses = {
   poppins: string;
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} ${poppins.className}`}>
+        {/* <NavBar/> */}
         {children}
       </body>
     </html>

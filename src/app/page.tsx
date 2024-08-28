@@ -1,22 +1,17 @@
 // import SideBar from "@/component/sideBar/SideBar";
+import AboutUs from "@/component/aboutUs/AboutUs";
+import HeroPage from "@/component/heroPage/HeroPage";
+import NavBar from "@/component/nav/NavBar";
 import Image from "next/image";
+// import "./global.css";
 
 export default function Home() {
   return (
-    <main className="h-screen w-full">
+    <main className="w-full">
       <div>
-        <p>This is for a school Project</p>
-        {/* <SideBar /> */}
-        <div>
-          <p className="text-white bg-white">
-            This is the marking for work
-          </p>
-        </div>
-      </div>
-      <div className=" bg-orange-500 w-full h-[4rem]">
-        <p className="text-white">
-          This is the SideBar for the Schools Notification
-        </p>
+        <NavBar />
+        <HeroPage/>
+        <AboutUs/>
       </div>
     </main>
   );
