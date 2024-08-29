@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NavBar() {
   return (
@@ -19,13 +20,27 @@ export default function NavBar() {
         </h1>
       </div>
       <div className="ml-[4rem]">
-        <ul className="flex justify-center items-center gap-2 cursor-pointer text-bold">
-          <li>About</li>
-          <li>Prospectus</li>
-          <li>Event</li>
-          <li>Admission</li>
-          <li>Gallary</li>
-          <li>News</li>
+        <ul className="flex justify-center items-center gap-2 cursor-pointer text-bold text-slate-500">
+          <Link href="/about">
+            <li>About</li>
+          </Link>
+          <Link href="/prospectus">
+            <li>Prospectus</li>
+          </Link>
+          <Link href="/event">
+            <li>Event</li>
+          </Link>
+          <Link href="/admission">
+            <li className="bg-purple-600 text-slate-200 p-[6px] rounded-xl shadow-lg shadow-slate-900">
+              Admission
+            </li>
+          </Link>
+          <Link href="/gallary">
+            <li>Gallary</li>
+          </Link>
+          <Link href="/news">
+            <li>News</li>
+          </Link>
         </ul>
       </div>
       {/* <div className="pl-[4rem]">

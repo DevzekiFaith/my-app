@@ -1,9 +1,11 @@
 import React from "react";
+import Image from "next/image";
+import AboutOverLay from "./AboutOverLay";
 
 export default function AboutUs() {
   return (
-    <div className="p-[16px] bg-blue-400 mt-[-4.5rem]">
-      <div>
+    <div className="flex justify-center flex-col items-center gap-[3rem] p-[16px] bg-blue-300 mt-[-4.5rem]">
+      <div className="w-[600px]">
         <h4 className="text-blue-900 uppercase font-extrabold mb-[8px] text-[14px]">
           about us
         </h4>
@@ -13,7 +15,7 @@ export default function AboutUs() {
           </h1>
         </div>
 
-        <p className="text-slate-950">
+        <p className="text-slate-950 ">
           {" "}
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
           ipsam exercitationem nam quasi illo nulla nobis officiis sunt
@@ -27,6 +29,16 @@ export default function AboutUs() {
             <button className="text-slate-200 ml-4 text-bold">Read More</button>
           </div>
         </div>
+      </div>
+      <div className="relative w-full">
+        <Image
+          className="w-full h-[700px] object-cover"
+          src="/st55.jpg"
+          alt="Aboutus-face"
+          width={300}
+          height={300}
+        />
+      <AboutOverLay/>
       </div>
     </div>
   );

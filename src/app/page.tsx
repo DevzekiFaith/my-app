@@ -1,6 +1,7 @@
 // import SideBar from "@/component/sideBar/SideBar";
 import AboutUs from "@/component/aboutUs/AboutUs";
 import HeroPage from "@/component/heroPage/HeroPage";
+import HeadMessage from "@/component/message/HeadMessage";
 import NavBar from "@/component/nav/NavBar";
 import Image from "next/image";
 // import "./global.css";
@@ -12,6 +13,7 @@ export default function Home() {
         <NavBar />
         <HeroPage/>
         <AboutUs/>
+        <HeadMessage/>
       </div>
     </main>
   );

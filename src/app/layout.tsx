@@ -3,14 +3,15 @@ import { Inter } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/component/nav/NavBar";
+import Footer from "@/component/footer/Footer";
 
 type FontClasses = {
   poppins: string;
 };
 
 const inter = Inter({ subsets: ["latin"] });
-const poppins = Poppins({ 
-  subsets: ["latin"], 
+const poppins = Poppins({
+  subsets: ["latin"],
   weight: ["300", "600"],
 });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${poppins.className}`}>
         {/* <NavBar/> */}
         {children}
+        {/* <Footer/> */}
       </body>
     </html>
   );
