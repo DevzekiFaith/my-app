@@ -1,5 +1,6 @@
 // import SideBar from "@/component/sideBar/SideBar";
 import AboutUs from "@/component/aboutUs/AboutUs";
+import Footer from "@/component/footer/Footer";
 import HeroPage from "@/component/heroPage/HeroPage";
 import HeadMessage from "@/component/message/HeadMessage";
 import NavBar from "@/component/nav/NavBar";
@@ -14,6 +15,7 @@ export default function Home() {
         <HeroPage/>
         <AboutUs/>
         <HeadMessage/>
+        <Footer/>
       </div>
     </main>
   );
