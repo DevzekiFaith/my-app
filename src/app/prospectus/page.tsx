@@ -8,7 +8,7 @@ const Prospectus_Page = () => {
     <div className="flex-1">
       <Form />
       <Footer />
-      <Copywrite />
+      <Copywrite/>
     </div>
   );
 };

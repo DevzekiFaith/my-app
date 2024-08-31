@@ -1,13 +1,18 @@
-import React from 'react'
+import Copywrite from "@/component/copyright/Copywrite";
+import Footer from "@/component/footer/Footer";
+import SchoolStory from "@/component/school-story/SchoolStory";
+import React from "react";
 
 const About_Page = () => {
   return (
-    <div>
+    <div className="bg-blue-950 flex-1">
       <div>
-        <h1>This is the About Page</h1>
+        <SchoolStory />
+        <Footer/>
+        <Copywrite/>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default About_Page
+export default About_Page;

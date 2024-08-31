@@ -27,7 +27,7 @@ export default function ContactForm() {
   return (
     <div className="bg-blue-950 p-[4rem] flex justify-center items-center gap-[3rem]">
       <div className="w-[500px] border p-[2rem] border-slate-500 rounded-xl">
-        <p className="text-[14px] text-slate-200">
+        <p className="text-[14px] text-slate-400">
           Warm Welcome to Our New Students and Families! <br />
           Dear Students and Parents,
           <br />
