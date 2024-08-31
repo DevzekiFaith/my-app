@@ -1,5 +1,6 @@
 // import SideBar from "@/component/sideBar/SideBar";
 import AboutUs from "@/component/aboutUs/AboutUs";
+import Copywrite from "@/component/copyright/Copywrite";
 import Footer from "@/component/footer/Footer";
 import HeroPage from "@/component/heroPage/HeroPage";
 import HeadMessage from "@/component/message/HeadMessage";
@@ -12,10 +13,11 @@ export default function Home() {
     <main className="w-full">
       <div>
         <NavBar />
-        <HeroPage/>
-        <AboutUs/>
-        <HeadMessage/>
-        <Footer/>
+        <HeroPage />
+        <AboutUs />
+        <HeadMessage />
+        <Footer />
+        <Copywrite />
       </div>
     </main>
   );

@@ -11,13 +11,15 @@ export default function Footer() {
     <div className="bg-blue-950 h-[12rem] p-[22px] flex justify-between items-center">
       <div>
         <div className="w-[150px] h-[32px] flex justify-center items-center gap-2 mb-[1rem]">
-          <Image
-            className="w-[2rem] h-[2rem]"
-            src="/logo.png"
-            alt="logo2"
-            width={200}
-            height={200}
-          />
+          <Link href="/">
+            <Image
+              className="w-[2rem] h-[2rem]"
+              src="/logo.png"
+              alt="logo2"
+              width={200}
+              height={200}
+            />
+          </Link>
           <p className="w-[80px] text-slate-200 text-[8px]">
             Gabselina Schools
           </p>
@@ -44,6 +46,10 @@ export default function Footer() {
 
             <span className="text-slate-100 w-[16rem] text-[12px]">
               (+234) 9021012556
+            </span>
+            <span className="text-slate-200 text-[12px] flex gap-1 ml-[-9rem]">
+              <MdEmail className="text-slate-200 w-4 h-4" />
+              <p className="text-[12px]">newgabselinaschool@gmail.com</p>
             </span>
           </div>
         </div>
@@ -77,12 +83,12 @@ export default function Footer() {
       <div>
         <h1 className="text-slate-300 p-1">NewsLetter</h1>
         <p className="w-[120px] text-[10px] text-slate-500 mb-[8px]">
-          Join our School mailing list to get everyone updated on upcoming
+          Join our School mailing list to get everyone update on our upcoming
           events
         </p>
         <div>
           <input
-            className="w-[18rem] h-[2rem] bg-slate-500 rounded-xl relative"
+            className="w-[18rem] h-[2rem] bg-slate-500 rounded-xl relative px-[1rem]"
             type="text"
             placeholder="email only..."
           />
