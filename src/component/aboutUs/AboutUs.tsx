@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import AboutOverLay from "./AboutOverLay";
+import Link from "next/link";
 
 export default function AboutUs() {
   return (
@@ -25,9 +26,11 @@ export default function AboutUs() {
           optio ipsa?
         </p>
         <div>
+          <Link href="/about">
           <div className="bg-purple-700 w-[8rem] p-[8px] rounded-xl shadow-2xl shadow-black mt-[1rem]">
             <button className="text-slate-200 ml-4 text-bold">Read More</button>
           </div>
+          </Link>
         </div>
       </div>
       <div className="relative w-full">

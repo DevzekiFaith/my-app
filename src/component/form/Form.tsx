@@ -6,9 +6,12 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Form from "react-bootstrap/Form";
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
+import FormOverLay from "./FormOverLay";
+
 
 export default function ContactForm() {
   const [isLoading, setLoading] = useState(false);
+
 
   useEffect(() => {
     function simulateNetworkRequest() {
@@ -27,7 +30,7 @@ export default function ContactForm() {
   return (
     <div className="bg-blue-950 p-[4rem] flex justify-center items-center gap-[3rem]">
       <div className="w-[500px] border p-[2rem] border-slate-500 rounded-xl">
-        <p className="text-[14px] text-slate-400">
+        <p className="text-[14px] text-slate-700">
           Warm Welcome to Our New Students and Families! <br />
           Dear Students and Parents,
           <br />
@@ -77,6 +80,13 @@ export default function ContactForm() {
           width={300}
           height={300}
         />
+        <Image
+          className="w-[400px] h-[400px]"
+          src="/cl1.png"
+          alt="Classroom"
+          width={300}
+          height={300}
+        />
         <div className="w-[500px]">
           <h1 className="mt-[1rem] mb-[2rem] text-slate-300 text-[2rem]">
             Enquiry Form
@@ -107,6 +117,7 @@ export default function ContactForm() {
                   type="password"
                   placeholder="password"
                 />
+               
               </span>
             </div>
             <div>
@@ -121,6 +132,7 @@ export default function ContactForm() {
           </Form>
         </div>
       </div>
+      <FormOverLay />
     </div>
   );
 }

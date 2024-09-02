@@ -24,9 +24,9 @@ export default function NavBar() {
         </Link>
       </div>
       <div className="ml-[4rem]">
-        <ul className="flex justify-center items-center gap-2 cursor-pointer text-bold text-slate-500">
+        <ul className="flex justify-center items-center gap-2 cursor-pointer text-bold text-slate-500 text-[8px]">
           <Link href="/about">
-            <li>About</li>
+            <li className="">About</li>
           </Link>
           <Link href="/prospectus">
             <li>Prospectus</li>

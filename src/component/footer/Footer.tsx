@@ -25,7 +25,7 @@ export default function Footer() {
           </p>
         </div>
         <div className="w-[500px]">
-          <h1 className="text-slate-500 w-[500px] text-[12px]">
+          <h1 className="text-slate-500 w-[500px] text-[10px]">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates
             maiores enim vero quisquam tempora quo velit cupiditate laboriosam
             qui iure, officia recusandae libero error ad ea quaerat iste ut
@@ -44,7 +44,7 @@ export default function Footer() {
               <FaPhone className="text-slate-200 w-4 h-4" />
             </div>
 
-            <span className="text-slate-100 w-[16rem] text-[12px]">
+            <span className="text-slate-100 w-[16rem] text-[10px]">
               (+234) 9021012556
             </span>
             <span className="text-slate-200 text-[12px] flex gap-1 ml-[-9rem]">
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
       </div>
       <div>
-        <div className="mt-[-2rem] ml-[-2rem]">
+        <div className="mt-[-2rem] ml-[-2rem] text-[12px]">
           <ul className="flex justify-center items-center gap-2 cursor-pointer text-bold text-slate-500">
             <Link href="/about">
               <li>About</li>
@@ -92,7 +92,7 @@ export default function Footer() {
             type="text"
             placeholder="email only..."
           />
-          <button className="absolute w-[100px] right-[1.3rem] bg-purple-600 p-[6px] text-[12px] rounded-xl shadow-xl shadow-slate-800 border text-slate-100">
+          <button className="absolute w-[100px] right-[1.3rem] bg-purple-600 p-[6px] text-[10px] rounded-xl shadow-xl shadow-slate-800 border text-slate-100">
             Subscribe
           </button>
         </div>
