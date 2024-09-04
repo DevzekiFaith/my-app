@@ -21,7 +21,7 @@ export default function OverLay() {
           sapiente odit!
         </p>
       </div>
-      <div className="bg-blue-500 text-white font-light p-[12px] mt-[1rem] w-[12rem] rounded-xl">
+      <div className="bg-purple-700 text-white font-light p-[12px] mt-[1rem] w-[12rem] rounded-xl">
         <Link href="/prospectus">
           <button className="w-[11rem]">School Prospectus</button>
         </Link>

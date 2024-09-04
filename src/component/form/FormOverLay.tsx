@@ -47,7 +47,7 @@ export default function FormOverLay() {
   };
 
   return (
-    <div className="absolute inset-0 top-0 bg-black xl:h-[100rem] bg-opacity-70 backdrop-blur-medium flex flex-col justify-start items-start h-screen p-[12rem]">
+    <div className="absolute inset-0 top-0 bg-black xl:h-[100rem] bg-opacity-70 backdrop-blur-medium flex flex-col justify-start items-start h-screen p-[12rem] pt-[14rem]">
       <div>
         <div className="mt-[-8rem]">
           <Image
@@ -57,38 +57,41 @@ export default function FormOverLay() {
             height={300}
           />
         </div>
-        <p className="text-white">This is Hello Time!</p>
-        <p className="text-[14px] text-slate-300">
+        <p className="text-purple-700">This is Hello Time!</p>
+        <p className="text-[12px] text-slate-300">
           Warm Welcome to Our New Students and Families! <br />
           Dear Students and Parents,
           <br />
           <br />
-          Welcome to our school family! It is with heartfelt joy that I extend
-          this greeting to each of you as you join our vibrant community. I am
-          Architect Nkemakonam Mabel Ubor, the Director here at New Gabselina
-          Schools, and I am genuinely excited to get to know each one of you.
-          Starting at a new school is an exciting adventure, full of new
-          experiences and opportunities. Our school is more than just a place
-          for learning; it is a place where we grow together, both in knowledge
-          and character. We are deeply committed to helping your child not only
-          excel academically but also develop into a person of strong moral
-          character. Our vision is simple yet profound: to nurture young minds
-          and hearts, guiding them to become compassionate, respectful, and
-          thoughtful individuals. We believe that the true measure of success
-          lies not just in grades, but in the kindness, integrity, and
-          resilience our students show in their daily lives. You will find that
-          our teachers and staff are dedicated to creating a warm and supportive
-          environment where every student feels valued and inspired. We are here
-          to encourage curiosity, celebrate achievements, and help your child
-          navigate challenges with confidence. We also recognize the importance
-          of partnership with parents. Your involvement and insights are
-          invaluable, and we are eager to work together to ensure that your
-          childs experience at New Gabselina Schools is both enriching and
-          fulfilling. Please know that my door is always open for conversations,
-          questions, or simply to share a moment of joy about your childs
-          progress. Thank you for choosing to be part of our community. We are
-          looking forward to an amazing year ahead, filled with growth,
-          learning, and unforgettable memories.
+          <span className="text-slate-300 text-[14px]">
+            Welcome to our school family! It is with heartfelt joy that I extend
+            this greeting to each of you as you join our vibrant community. I am
+            Architect Nkemakonam Mabel Ubor, the Director here at New Gabselina
+            Schools, and I am genuinely excited to get to know each one of you.
+            Starting at a new school is an exciting adventure, full of new
+            experiences and opportunities. Our school is more than just a place
+            for learning; it is a place where we grow together, both in
+            knowledge and character. We are deeply committed to helping your
+            child not only excel academically but also develop into a person of
+            strong moral character. Our vision is simple yet profound: to
+            nurture young minds and hearts, guiding them to become
+            compassionate, respectful, and thoughtful individuals. We believe
+            that the true measure of success lies not just in grades, but in the
+            kindness, integrity, and resilience our students show in their daily
+            lives. You will find that our teachers and staff are dedicated to
+            creating a warm and supportive environment where every student feels
+            valued and inspired. We are here to encourage curiosity, celebrate
+            achievements, and help your child navigate challenges with
+            confidence. We also recognize the importance of partnership with
+            parents. Your involvement and insights are invaluable, and we are
+            eager to work together to ensure that your childs experience at New
+            Gabselina Schools is both enriching and fulfilling. Please know that
+            my door is always open for conversations, questions, or simply to
+            share a moment of joy about your childs progress. Thank you for
+            choosing to be part of our community. We are looking forward to an
+            amazing year ahead, filled with growth, learning, and unforgettable
+            memories.
+          </span>
           <br />
           <br />
           With warmest regards,
@@ -185,7 +188,7 @@ export default function FormOverLay() {
       </div>
       {/* The thank you message content */}
       <div className="mt-[4rem]">
-        <p className="text-white text-[15px]">
+        <p className="text-white text-[14px]">
           Thank you, parents, for entrusting us with the education and
           well-being of your children. We value the partnership between our
           school and your family, and we look forward to working closely

@@ -126,7 +126,7 @@ export default function SchoolStory() {
           </div> */}
         </div>
       </div>
-      <div className="border border-slate-700 p-[12px] rounded-2xl w-[650px] text-white text-[12px]">
+      <div className="border border-slate-700 p-[12px] rounded-2xl w-[650px] text-purple-600 text-[12px]">
         <span className="text-purple-400 font-bold text-[12px] ">
           Gabselina School
         </span>{" "}
