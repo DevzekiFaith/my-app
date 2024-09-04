@@ -1,12 +1,30 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { FaFacebook } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
-import { FaPhone } from "react-icons/fa6";
+import { FaFacebook, FaInstagram, FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+// import { useForm } from "react-hook-form";
+// import { SubmitHandler } from "react-hook-form";
 
-export default function Footer() {
+"react-hook-form";
+
+type FormValues = {
+  Email: string;
+};
+
+export default function Footer() { 
+  // const {
+  //   register,
+  //   handleSubmit,
+  //   reset,
+  //   formState: { errors },
+  // } = useForm<FormValues>();
+
+  // const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
+  //   console.log(data);
+  //   reset();
+  // };
+
   return (
     <div className="bg-blue-950 h-[12rem] p-[22px] flex justify-between items-center">
       <div>
@@ -86,16 +104,22 @@ export default function Footer() {
           Join our School mailing list to get everyone update on our upcoming
           events
         </p>
-        <div>
-          <input
-            className="w-[18rem] h-[2rem] bg-slate-500 rounded-xl relative px-[1rem]"
-            type="text"
-            placeholder="email only..."
-          />
-          <button className="absolute w-[100px] right-[1.3rem] bg-purple-600 p-[6px] text-[10px] rounded-xl shadow-xl shadow-slate-800 border text-slate-100">
-            Subscribe
-          </button>
-        </div>
+        {/* <form onSubmit={handleSubmit(onSubmit)}> */}
+          <div>
+            <input
+              className="w-[18rem] h-[2rem] bg-slate-500 rounded-xl relative px-[1rem] text-white text-[12px]"
+              type="text"
+              placeholder="email only..."
+              // {...register("Email", { required: "email is required" })}
+            />
+            {/* {errors?.Email && (
+              <p className="text-red-500">{errors.Email.message}</p>
+            )} */}
+            <button type="submit" className="absolute w-[100px] right-[1.3rem] bg-purple-600 p-[6px] text-[10px] rounded-xl shadow-xl shadow-slate-800 border text-slate-100 cursor-pointer">
+              Subscribe
+            </button>
+          </div>
+        {/* </form> */}
       </div>
     </div>
   );
