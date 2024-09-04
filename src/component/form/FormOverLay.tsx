@@ -5,11 +5,29 @@ import Button from "react-bootstrap/Button";
 import Image from "next/image";
 import { FaRegEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import { useForm, SubmitHandler } from "react-hook-form";
+
+type FormValues = {
+  Name: string;
+  Email: string;
+  password: string;
+};
 
 export default function FormOverLay() {
   const [isLoading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
-  const [close, setClose] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormValues>();
+
+  const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
+    console.log(data);
+    reset();
+  };
 
   useEffect(() => {
     function simulateNetworkRequest() {
@@ -25,7 +43,7 @@ export default function FormOverLay() {
 
   const handleClick = () => setLoading(true);
   const handleOpen = () => {
-    setOpen((previousState) => !previousState);
+    setOpen((prevState) => !prevState);
   };
 
   return (
@@ -58,17 +76,17 @@ export default function FormOverLay() {
           and hearts, guiding them to become compassionate, respectful, and
           thoughtful individuals. We believe that the true measure of success
           lies not just in grades, but in the kindness, integrity, and
-          resilience our students show in their daily lives. You’ll find that
+          resilience our students show in their daily lives. You will find that
           our teachers and staff are dedicated to creating a warm and supportive
-          environment where every student feels valued and inspired. We’re here
+          environment where every student feels valued and inspired. We are here
           to encourage curiosity, celebrate achievements, and help your child
           navigate challenges with confidence. We also recognize the importance
           of partnership with parents. Your involvement and insights are
-          invaluable, and we’re eager to work together to ensure that your
-          child’s experience at New Gabselina Schools is both enriching and
+          invaluable, and we are eager to work together to ensure that your
+          childs experience at New Gabselina Schools is both enriching and
           fulfilling. Please know that my door is always open for conversations,
-          questions, or simply to share a moment of joy about your child’s
-          progress. Thank you for choosing to be part of our community. We’re
+          questions, or simply to share a moment of joy about your childs
+          progress. Thank you for choosing to be part of our community. We are
           looking forward to an amazing year ahead, filled with growth,
           learning, and unforgettable memories.
           <br />
@@ -82,20 +100,31 @@ export default function FormOverLay() {
           Director, New Gabselina Schools
         </p>
       </div>
+      {/* The welcome message content */}
       <div className="w-[500px]">
         <h1 className="mt-[1rem] mb-[2rem] text-slate-300 text-[2rem]">
           Enquiry Form
         </h1>
-        <Form className="border p-[12px] rounded-xl border-slate-600">
+        <h5 className="text-slate-600 text-[12px] mt-[-1.8rem] mb-[1.3rem]">
+          enter your Information for updates
+        </h5>
+
+        <Form
+          onSubmit={handleSubmit(onSubmit)}
+          className="border p-[12px] rounded-xl border-slate-600"
+        >
           <div className="flex flex-col justify-start items-start gap-[14px] ml-[1rem]">
             <span className="flex flex-col gap-[4px]">
               <label className="text-slate-500">Name</label>
               <input
-                className="w-[28rem] h-[3rem] rounded-3xl placeholder-slate-200 px-[1rem] shadow-2xl bg-slate-600"
+                className="w-[28rem] h-[3rem] rounded-3xl placeholder-slate-200 px-[1rem] shadow-2xl bg-slate-600 text-white"
                 type="text"
                 placeholder="name"
-                aria-label="name"
+                {...register("Name", { required: "Name is required" })}
               />
+              {errors?.Name && (
+                <p className="text-red-500">{errors.Name.message}</p>
+              )}
             </span>
             <span className="flex flex-col gap-[4px]">
               <label className="text-slate-500">Email</label>
@@ -103,16 +132,26 @@ export default function FormOverLay() {
                 className="w-[28rem] h-[3rem] rounded-3xl placeholder-slate-200 px-[1rem] shadow-2xl bg-slate-600 text-white"
                 type="text"
                 placeholder="email"
+                {...register("Email", { required: "Email is required" })}
               />
+              {errors?.Email && (
+                <p className="text-red-500">{errors.Email.message}</p>
+              )}
             </span>
             <div className="relative">
               <span className="flex flex-col gap-[4px]">
                 <label className="text-slate-500">Password</label>
                 <input
-                  className="w-[28rem] h-[3rem] rounded-3xl placeholder-slate-200 px-[1rem] shadow-2xl bg-slate-600"
+                  className="w-[28rem] h-[3rem] rounded-3xl placeholder-slate-200 px-[1rem] shadow-2xl bg-slate-600 text-white"
                   type={open ? "text" : "password"}
                   placeholder="password"
+                  {...register("password", {
+                    required: "Password is required",
+                  })}
                 />
+                {errors?.password && (
+                  <p className="text-red-500">{errors.password.message}</p>
+                )}
               </span>
               <div>
                 {open ? (
@@ -135,22 +174,22 @@ export default function FormOverLay() {
           </div>
           <div>
             <Button
+              type="submit"
               className="bg-purple-800 p-[6px] w-[28rem] mt-[22px] rounded-2xl text-white h-[3rem] text-[18px] font-bold shadow-2xl shadow-slate-900 ml-[1rem] mb-[2rem]"
               disabled={isLoading}
-              onClick={isLoading ? () => {} : handleClick}
             >
               {isLoading ? "Loading…" : "Submit"}
             </Button>
           </div>
         </Form>
       </div>
+      {/* The thank you message content */}
       <div className="mt-[4rem]">
         <p className="text-white text-[15px]">
-          {" "}
           Thank you, parents, for entrusting us with the education and
           well-being of your children. We value the partnership between our
           school and your family, and we look forward to working closely
-          together to support your child’s academic and personal growth. To our
+          together to support your childs academic and personal growth. To our
           students, thank you for bringing your unique talents, energy, and
           curiosity to our school. We are excited to see you thrive and succeed
           in the years to come. Once again, welcome to our school family. We are
