@@ -1,14 +1,35 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+// Define the navigation links with their names and paths
+const navLinks = [
+  { name: "about", path: "/about" },
+  { name: "admission", path: "/admission" },
+  { name: "contact", path: "/contact" },
+  { name: "event", path: "/event" },
+  { name: "gallary", path: "/gallary" },
+];
 
 export default function NavBar() {
+  // Get the current path from the router
+  const currentPath = usePathname();
+
+  // Function to check if a given path is the current path
+  const isActive = (path: string): boolean => {
+    return currentPath === path;
+  };
+
   return (
-    <div className="bg-[#E9E9E9] flex justify-start items-center gap-4 h-[5.8rem] p-[12px] fixed w-full z-[100] cursor-pointer">
-      <div className="h-[4rem] w-[4rem]">
+    <div className="bg-[#E9E9E9] flex justify-start items-center gap-4 h-[5.8rem] p-3 fixed w-full z-50 cursor-pointer">
+      {/* Logo section */}
+      <div className="h-16 w-16">
         <Link href="/">
           <Image
-            className="w-[4.5rem] h-[4.2rem]"
+            className="w-18 h-16"
             src="/logo.png"
             width={50}
             height={50}
@@ -16,42 +37,31 @@ export default function NavBar() {
           />
         </Link>
       </div>
-      <div className="w-[200px]">
+      {/* School name section */}
+      <div className="w-52">
         <Link href="/">
-          <h1 className="text-blue-800 font-bold text-[18px]">
-            Gabselina Schools
-          </h1>
+          <h1 className="text-blue-800 font-bold text-lg">Gabselina Schools</h1>
         </Link>
       </div>
-      <div className="ml-[4rem]">
-        <ul className="flex justify-center items-center gap-2 cursor-pointer text-bold text-slate-500 text-[8px]">
-          <Link href="/about">
-            <li className="">About</li>
-          </Link>
-          <Link href="/prospectus">
-            <li>Prospectus</li>
-          </Link>
-          <Link href="/event">
-            <li>Event</li>
-          </Link>
-          <Link href="/admission">
-            <li className="bg-purple-600 text-slate-200 p-[6px] rounded-xl shadow-lg shadow-slate-900">
-              Admission
+      {/* Navigation links section */}
+      <div className="ml-16 flex gap-4">
+        <ul className="flex justify-center items-center gap-[1rem]">
+          {navLinks.map((pages, index) => (
+            <li key={index}>
+              <Link
+                href={pages.path}
+                className={
+                  isActive(pages.path)
+                    ? "bg-blue-600 text-white p-[6px]"
+                    : "text-slate-500 hover:text-slate-800"
+                }
+              >
+                {pages.name}
+              </Link>
             </li>
-          </Link>
-          <Link href="/gallary">
-            <li>Gallary</li>
-          </Link>
-          <Link href="/news">
-            <li>News</li>
-          </Link>
+          ))}
         </ul>
       </div>
-      {/* <div className="pl-[4rem]">
-        <marquee className="text-blue-600" direction="right">
-          welcome to Gabselina Schools! 
-        </marquee>
-      </div> */}
     </div>
   );
 }

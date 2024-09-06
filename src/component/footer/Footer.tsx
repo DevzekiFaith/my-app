@@ -1,18 +1,35 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaFacebook, FaInstagram, FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { usePathname } from "next/navigation";
 // import { useForm } from "react-hook-form";
 // import { SubmitHandler } from "react-hook-form";
 
-"react-hook-form";
+// Define the navigation links with their names and paths
+const navLinks = [
+  { name: "about", path: "/about" },
+  { name: "admission", path: "/admission" },
+  { name: "contact", path: "/contact" },
+  { name: "event", path: "/event" },
+  { name: "gallary", path: "/gallary" },
+];
 
 type FormValues = {
   Email: string;
 };
 
-export default function Footer() { 
+export default function Footer() {
+  // Get the current path from the router
+  const currentPath = usePathname();
+
+  // Function to check if a given path is the current path
+  const isActive = (path: string): boolean => {
+    return currentPath === path;
+  };
   // const {
   //   register,
   //   handleSubmit,
@@ -73,28 +90,30 @@ export default function Footer() {
         </div>
       </div>
       <div>
-        <div className="mt-[-2rem] ml-[-2rem] text-[12px]">
-          <ul className="flex justify-center items-center gap-2 cursor-pointer text-bold text-slate-500">
-            <Link href="/about">
-              <li>About</li>
-            </Link>
-            <Link href="/prospectus">
-              <li>Prospectus</li>
-            </Link>
-            <Link href="/event">
-              <li>Event</li>
-            </Link>
-            <Link href="/admission">
-              <li className="bg-purple-600 text-slate-200 p-[6px] rounded-xl shadow-lg shadow-slate-900">
-                Admission
+        <div className="w-52">
+          <Link href="/">
+            <h1 className="text-blue-800 font-bold text-lg">
+              Gabselina Schools
+            </h1>
+          </Link>
+        </div>
+        {/* Navigation links section */}
+        <div className="ml-16 flex gap-4">
+          <ul className="flex justify-center items-center gap-[1rem] text-[12px]">
+            {navLinks.map((pages, index) => (
+              <li key={index}>
+                <Link
+                  href={pages.path}
+                  className={
+                    isActive(pages.path)
+                      ? "bg-blue-600 text-white p-[8px] rounded-xl text-bold"
+                      : "text-slate-500 hover:text-slate-800"
+                  }
+                >
+                  {pages.name}
+                </Link>
               </li>
-            </Link>
-            <Link href="/gallary">
-              <li>Gallary</li>
-            </Link>
-            <Link href="/news">
-              <li>News</li>
-            </Link>
+            ))}
           </ul>
         </div>
       </div>
@@ -105,20 +124,23 @@ export default function Footer() {
           events
         </p>
         {/* <form onSubmit={handleSubmit(onSubmit)}> */}
-          <div>
-            <input
-              className="w-[18rem] h-[2rem] bg-slate-500 rounded-xl relative px-[1rem] text-white text-[12px]"
-              type="text"
-              placeholder="email only..."
-              // {...register("Email", { required: "email is required" })}
-            />
-            {/* {errors?.Email && (
+        <div>
+          <input
+            className="w-[18rem] h-[2rem] bg-slate-500 rounded-xl relative px-[1rem] text-white text-[12px]"
+            type="text"
+            placeholder="email only..."
+            // {...register("Email", { required: "email is required" })}
+          />
+          {/* {errors?.Email && (
               <p className="text-red-500">{errors.Email.message}</p>
             )} */}
-            <button type="submit" className="absolute w-[100px] right-[1.3rem] bg-purple-600 p-[6px] text-[10px] rounded-xl shadow-xl shadow-slate-800 border text-slate-100 cursor-pointer">
-              Subscribe
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="absolute w-[100px] right-[1.3rem] bg-purple-600 p-[6px] text-[10px] rounded-xl shadow-xl shadow-slate-800 border text-slate-100 cursor-pointer"
+          >
+            Subscribe
+          </button>
+        </div>
         {/* </form> */}
       </div>
     </div>
