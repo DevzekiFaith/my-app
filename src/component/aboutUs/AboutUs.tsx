@@ -1,11 +1,19 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import AboutOverLay from "./AboutOverLay";
 import Link from "next/link";
 
 export default function AboutUs() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true); // Set to true after the component mounts
+  }, []);
+
   return (
-    <div className="flex justify-center flex-col items-center gap-[3rem] p-[16px] bg-blue-300 mt-[-4.5rem]">
+    <div className="flex justify-center flex-col items-center gap-[3rem] p-[16px] bg-black mt-[-4.5rem]">
       <div className="w-[600px]">
         <h4 className="text-blue-900 uppercase font-extrabold mb-[8px] text-[14px]">
           about us
@@ -16,7 +24,7 @@ export default function AboutUs() {
           </h1>
         </div>
 
-        <p className="text-slate-950 ">
+        <p className="text-slate-400 ">
           {" "}
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
           ipsam exercitationem nam quasi illo nulla nobis officiis sunt
@@ -27,21 +35,27 @@ export default function AboutUs() {
         </p>
         <div>
           <Link href="/about">
-          <div className="bg-purple-700 w-[8rem] p-[8px] rounded-xl shadow-2xl shadow-black mt-[1rem]">
-            <button className="text-slate-200 ml-4 text-bold">Read More</button>
-          </div>
+            <div className="bg-purple-700 w-[8rem] p-[8px] rounded-xl shadow-2xl shadow-black mt-[1rem]">
+              <button className="text-slate-200 ml-4 text-bold">
+                Read More
+              </button>
+            </div>
           </Link>
         </div>
       </div>
       <div className="relative w-full">
-        <Image
-          className="w-full h-[700px] object-cover"
-          src="/st55.jpg"
-          alt="Aboutus-face"
-          width={300}
-          height={300}
-        />
-      <AboutOverLay/>
+        {isClient && ( // Render Image and AboutOverLay only on the client
+          <>
+            <Image
+              className="w-full h-[700px] object-cover"
+              src="/st55.jpg"
+              alt="Aboutus-face"
+              width={300}
+              height={300}
+            />
+            <AboutOverLay />
+          </>
+        )}
       </div>
     </div>
   );

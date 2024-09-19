@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MessageOverLay() {
   return (
-    <div className="absolute inset-0 top-0 bg-blue-950 xl:h-[48rem] bg-opacity-70 backdrop-blur-medium flex flex-col justify-start items-start h-screen p-[12rem]">
+    <div className="absolute inset-0 top-0 bg-slate-950 xl:h-[48rem] bg-opacity-70 backdrop-blur-medium flex flex-col justify-start items-start h-screen p-[12rem]">
       <p className="text-white text-[14px] w-[500px]">
         {" "}
         <span className="text-white">

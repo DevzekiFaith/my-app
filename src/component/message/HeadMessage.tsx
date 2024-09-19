@@ -1,10 +1,18 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import MessageOverLay from "./MessageOverLay";
 
 export default function HeadMessage() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <div className="bg-blue-950 h-[1100px] p-[18px]">
+    <div className="bg-slate-950 h-[1100px] p-[18px]">
       <h1 className="font-bold text-[1.2rem] mt-[12px] text-center text-purple-600 mb-[8px]">
         Welcome note from the{" "}
         <span className="text-slate-200 p-[8px] text-[24px]">
@@ -28,16 +36,18 @@ export default function HeadMessage() {
             </button>
           </div>
         </div>
-        <div className="mt-[-20px] w-full h-[700px] relative">
-          <Image
-            className="w-full h-[750px] object-cover"
-            src="/director.jpg"
-            alt="dc-face"
-            width={300}
-            height={300}
-          />
-          <MessageOverLay />
-        </div>
+        {isMounted && ( // Only render this part on the client
+          <div className="mt-[-20px] w-full h-[700px] relative">
+            <Image
+              className="w-full h-[750px] object-cover"
+              src="/director.jpg"
+              alt="dc-face"
+              width={300}
+              height={300}
+            />
+            <MessageOverLay />
+          </div>
+        )}
       </div>
     </div>
   );

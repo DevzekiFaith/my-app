@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutOverLay() {
   return (
-    <div className="absolute inset-0 top-0 bg-blue-950 bg-opacity-70 backdrop-blur-medium flex flex-col justify-start items-start p-[2rem]">
+    <div className="absolute inset-0 top-0 bg-black bg-opacity-70 backdrop-blur-medium flex flex-col justify-start items-start p-[2rem]">
       <div>
         <h1 className="text-[2rem] font-bold text-white">
           <span className="mr-2 text-purple-600">What</span>

@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 // Define the navigation links with their names and paths
 const navLinks = [
+  { name: "home", path: "/" },
   { name: "about", path: "/about" },
   { name: "admission", path: "/admission" },
   { name: "contact", path: "/contact" },
@@ -29,7 +30,7 @@ export default function NavBar() {
       <div className="h-16 w-16">
         <Link href="/">
           <Image
-            className="w-18 h-16"
+            className="w-[12rem] h-16"
             src="/logo.png"
             width={50}
             height={50}
@@ -52,7 +53,7 @@ export default function NavBar() {
                 href={pages.path}
                 className={
                   isActive(pages.path)
-                    ? "bg-blue-600 text-white p-[6px]"
+                    ? "bg-purple-600 text-white p-[8px] rounded-2xl text-[12px] "
                     : "text-slate-500 hover:text-slate-800"
                 }
               >

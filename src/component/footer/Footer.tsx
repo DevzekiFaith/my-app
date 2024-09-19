@@ -11,11 +11,13 @@ import { usePathname } from "next/navigation";
 
 // Define the navigation links with their names and paths
 const navLinks = [
+  { name: "home", path: "/" },
   { name: "about", path: "/about" },
-  { name: "admission", path: "/admission" },
-  { name: "contact", path: "/contact" },
-  { name: "event", path: "/event" },
   { name: "gallary", path: "/gallary" },
+  { name: "event", path: "/event" },
+  { name: "contact", path: "/contact" },
+  { name: "admission", path: "/admission" },
+  { name: "prospectus", path: "/prospectus" },
 ];
 
 type FormValues = {
@@ -48,7 +50,7 @@ export default function Footer() {
         <div className="w-[150px] h-[32px] flex justify-center items-center gap-2 mb-[1rem]">
           <Link href="/">
             <Image
-              className="w-[2rem] h-[2rem]"
+              className="w-[2rem] h-[2rem] animate-spin"
               src="/logo.png"
               alt="logo2"
               width={200}
@@ -98,7 +100,7 @@ export default function Footer() {
           </Link>
         </div>
         {/* Navigation links section */}
-        <div className="ml-16 flex gap-4">
+        <div className="ml-0 flex gap-4">
           <ul className="flex justify-center items-center gap-[1rem] text-[12px]">
             {navLinks.map((pages, index) => (
               <li key={index}>
@@ -106,7 +108,7 @@ export default function Footer() {
                   href={pages.path}
                   className={
                     isActive(pages.path)
-                      ? "bg-blue-600 text-white p-[8px] rounded-xl text-bold"
+                      ? "bg-purple-600 text-white p-[8px] rounded-xl text-bold"
                       : "text-slate-500 hover:text-slate-800"
                   }
                 >
